@@ -260,6 +260,16 @@ public class SampleActivity extends BaseActivity implements UCropFragmentCallbac
             case R.id.radio_dynamic:
                 // do nothing
                 break;
+            case R.id.radio_circle:
+                UCrop.Options options = new UCrop.Options();
+
+                options.setCircleDimmedLayer(true);
+                options.setShowCropFrame(false);
+                options.setShowCropGrid(false);
+
+                uCrop = uCrop.withAspectRatio(1, 1);
+                uCrop = uCrop.withOptions(options);
+                break;
             default:
                 try {
                     float ratioX = Float.valueOf(mEditTextRatioX.getText().toString().trim());
