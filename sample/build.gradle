@@ -37,9 +37,6 @@ android {
 
     // endregion
 
-    lintOptions {
-        abortOnError false
-    }
     productFlavors {
         activity {
             buildConfigField("int","RequestMode", "1")
@@ -51,6 +48,9 @@ android {
 
     buildFeatures {
         buildConfig true
+    }
+    lint {
+        abortOnError false
     }
 }
 

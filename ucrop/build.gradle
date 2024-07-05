@@ -36,9 +36,6 @@ android {
 
     // endregion
 
-    lintOptions {
-        abortOnError false
-    }
 
     resourcePrefix 'ucrop_'
 
@@ -48,6 +45,9 @@ android {
 
     buildFeatures {
         buildConfig true
+    }
+    lint {
+        abortOnError false
     }
 }
 
