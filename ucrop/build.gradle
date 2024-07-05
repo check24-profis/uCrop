@@ -9,6 +9,7 @@ android {
         targetSdkVersion 34
 
         vectorDrawables.useSupportLibrary = true
+        consumerProguardFiles 'consumer-rules.pro'
     }
     buildTypes {
         debug {
