@@ -1,14 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 33
-    buildToolsVersion '33.0.1'
-
+    compileSdk 33
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 33
-        versionCode 26
-        versionName "2.2.8-native"
+        versionCode 27
+        versionName "2.2.9-native"
 
         vectorDrawables.useSupportLibrary = true
     }
@@ -44,9 +42,6 @@ android {
         jni.srcDirs = []
     }
 
-    buildFeatures {
-        buildConfig true
-    }
 }
 
 dependencies {
