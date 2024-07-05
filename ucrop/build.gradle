@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 
 android {
     namespace "com.yalantis.ucrop"
@@ -6,8 +7,6 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 34
-        versionCode 27
-        versionName "2.2.9-native"
 
         vectorDrawables.useSupportLibrary = true
     }
@@ -56,6 +55,18 @@ dependencies {
     implementation "androidx.appcompat:appcompat:${androidx_appcompat_version}"
     implementation "androidx.exifinterface:exifinterface:${androidx_exifinterface_version}"
     implementation "androidx.transition:transition:${androidx_transition_version}"
-    // OkHttp3 versions above 3.12.x don't support pre-Lollipop Android versions (API 21)
     implementation "com.squareup.okhttp3:okhttp:4.12.0"
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                groupId = "com.github.check24-profis"
+                artifactId = "uCrop"
+                version = "2.2.9.3"
+                artifact(bundleReleaseAar)
+            }
+        }
+    }
 }
